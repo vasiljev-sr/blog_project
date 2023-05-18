@@ -28,8 +28,21 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             "sass-loader",
         ],
     }
+    const fileLoader = {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/'
+                }
+            }
+        ]
+    }
     return [
         typescriptLoader,
         cssLoader,
+        fileLoader,
     ]
 }
