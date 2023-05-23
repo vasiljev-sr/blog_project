@@ -4,11 +4,18 @@ import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;
+
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  };
+
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
   };
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -25,17 +32,15 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       'sass-loader',
     ],
   };
+
   const fileLoader = {
-    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
       {
         loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'fonts/',
-        },
       },
     ],
   };
-  return [typescriptLoader, cssLoader, fileLoader];
+
+  return [svgLoader, fileLoader, typescriptLoader, cssLoader];
 }
