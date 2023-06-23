@@ -36,6 +36,7 @@
     "css-loader": "^6.6.0",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-i18next": "^6.0.3",
     "eslint-plugin-react": "^7.32.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
@@ -45,14 +46,14 @@
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^14.5.3",
+    "stylelint-config-standard-scss": "^3.0.0",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.7.4",
-    "stylelint": "^14.5.3",
-    "stylelint-config-standard-scss": "^3.0.0"
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.0",
