@@ -57,7 +57,9 @@
     "webpack-dev-server": "^4.7.4",
     "jest": "^27.5.1",
     "@types/jest": "^27.4.1",
-    "@testing-library/jest-dom": "^5.16.2"
+    "@testing-library/jest-dom": "^5.16.2",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "@types/webpack-bundle-analyzer": "^4.4.1"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.0",
