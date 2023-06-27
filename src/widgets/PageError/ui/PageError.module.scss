@@ -1,0 +1,13 @@
+.PageError {
+  height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 40px;
+}
