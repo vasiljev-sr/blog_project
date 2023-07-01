@@ -1,15 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator";
-import {Navbar} from "./Navbar";
+import {NotFound} from "pages/NotFound";
 
 
-const meta: Meta<typeof Navbar> = {
-    title: 'widgets/Navbar',
-    component: Navbar,
+
+const meta: Meta<typeof NotFound> = {
+    title: 'pages/NotFound',
+    component: NotFound,
 };
 
 export default meta;
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof NotFound>;
 
 export const Light: Story = {
     args: {}
@@ -19,7 +20,6 @@ export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator("dark")]
 };
-
 
 
 

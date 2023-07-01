@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator";
-import {Navbar} from "./Navbar";
+import {ThemeSwitcher} from "./ThemeSwitcher";
 
 
-const meta: Meta<typeof Navbar> = {
-    title: 'widgets/Navbar',
-    component: Navbar,
+const meta: Meta<typeof ThemeSwitcher> = {
+    title: 'widgets/ThemeSwitcher',
+    component: ThemeSwitcher,
 };
 
 export default meta;
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof ThemeSwitcher>;
 
 export const Light: Story = {
     args: {}
@@ -19,7 +19,6 @@ export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator("dark")]
 };
-
 
 
 
