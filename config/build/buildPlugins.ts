@@ -16,12 +16,12 @@ export function buildPlugins({ isDev, paths }: BuildOptions): webpack.WebpackPlu
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new webpack.DefinePlugin({ __IS_DEV__: JSON.stringify(isDev) }),
-    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ];
 
   if (isDev) {
     plugins.push(new ReactRefreshPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
   }
 
   return plugins;
