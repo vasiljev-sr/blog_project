@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
-import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator";
-
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 
 const meta: Meta<typeof Button> = {
   title: 'shared/Button',
@@ -14,47 +13,103 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    children: 'Text'
+    children: 'Text',
   },
 };
 
 export const Clear: Story = {
   args: {
     children: 'Text',
-    theme: "clear"
+    theme: 'clear',
   },
 };
 
 export const Outlined: Story = {
   args: {
     children: 'Text',
-    theme: "outlined"
+    theme: 'outlined',
+  },
+};
+
+export const Background: Story = {
+  args: {
+    children: 'Text',
+    theme: 'background',
+  },
+};
+export const Inverted: Story = {
+  args: {
+    children: 'Text',
+    theme: 'inverted',
+  },
+};
+
+export const SizeM: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outlined',
+    size: 'size_m',
+  },
+};
+
+export const SizeL: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outlined',
+    size: 'size_l',
+  },
+};
+
+export const SizeXL: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outlined',
+    size: 'size_xl',
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
-    children: 'Text'
+    children: 'Text',
   },
-  decorators: [ThemeDecorator('dark')]
+  decorators: [ThemeDecorator('dark')],
 };
-
 
 export const ClearDark: Story = {
   args: {
     children: 'Text',
-    theme: "clear"
+    theme: 'clear',
   },
-  decorators: [ThemeDecorator('dark')]
+  decorators: [ThemeDecorator('dark')],
 };
 
 export const OutlinedDark: Story = {
   args: {
     children: 'Text',
-    theme: "outlined"
+    theme: 'outlined',
   },
-  decorators: [ThemeDecorator('dark')]
+  decorators: [ThemeDecorator('dark')],
 };
 
-
-
+export const BackgroundDark: Story = {
+  args: {
+    children: 'Text',
+    theme: 'background',
+  },
+  decorators: [ThemeDecorator('dark')],
+};
+export const InvertedDark: Story = {
+  args: {
+    children: 'Text',
+    theme: 'inverted',
+  },
+  decorators: [ThemeDecorator('dark')],
+};
+export const SquareDark: Story = {
+  args: {
+    children: '<',
+    square: true,
+    size: 'size_l',
+  },
+  decorators: [ThemeDecorator('dark')],
+};
