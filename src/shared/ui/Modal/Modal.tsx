@@ -2,6 +2,7 @@ import {
   KeyboardEvent,
   MouseEvent,
   ReactNode,
+  useCallback,
   useEffect,
   useRef,
   useState,
@@ -23,7 +24,7 @@ export const Modal = (props: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
-  const onClose = () => {
+  const onClose = useCallback(() => {
     if (closeModal) {
       setIsClosing(true);
       timerRef.current = setTimeout(() => {
@@ -31,21 +32,31 @@ export const Modal = (props: ModalProps) => {
         setIsClosing(false);
       }, ANIMATION_DELAY);
     }
-  };
+  }, [closeModal]);
 
-  const onKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      onClose();
-    }
-  };
+  const onKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    },
+    [onClose]
+  );
 
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       window.addEventListener('keydown', onKeyDown);
     }
 
     return () => {
-      clearTimeout(timerRef.current);
+      // clearTimeout(timerRef.current) так не работает, почему не понятно;
+      if (!isOpen) {
+        clearTimeout(timerRef.current);
+      }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
@@ -58,6 +69,7 @@ export const Modal = (props: ModalProps) => {
     [cls.opened]: isOpen,
     [cls.closing]: isClosing,
   };
+
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>

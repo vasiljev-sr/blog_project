@@ -5,7 +5,7 @@
               "plugin:i18next/recommended",
               "prettier"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["i18next"],
+  "plugins": ["i18next", "react-hooks"],
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module",
@@ -27,6 +27,8 @@
     "no-unused-vars": "warn",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn" ,
     "i18next/no-literal-string": ["warn", {"markupOnly":  true,
       "ignoreAttribute": ["data-testid", "to"]
     } ]

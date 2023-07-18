@@ -22,9 +22,10 @@
   padding: 16px;
   border-radius: 8px;
   background-color: var(--inverted-bg-color);
-  transition: 0.3s transform;
+  transition: transform 0.3s, opacity 0.3s;
   transform: scale(0.5);
   max-width: 60%;
+  opacity: 1;
 }
 
 .opened {
@@ -40,5 +41,6 @@
 .closing {
   .content {
     transform: scale(0.2);
+    opacity: 0;
   }
 }
