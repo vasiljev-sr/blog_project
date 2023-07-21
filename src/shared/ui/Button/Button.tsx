@@ -26,7 +26,7 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
         cls[size],
       ])}
       {...otherProps}
-      type={'button'}
+      type="button"
     >
       {children}
     </button>

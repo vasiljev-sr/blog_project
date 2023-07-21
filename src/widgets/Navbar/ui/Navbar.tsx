@@ -16,7 +16,7 @@ export const Navbar = (props: NavbarProps) => {
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       <Button
-        theme={'outlined'}
+        theme="outlined"
         className={cls.links}
         onClick={() => setOpen(true)}
       >

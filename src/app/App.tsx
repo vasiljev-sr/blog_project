@@ -8,9 +8,9 @@ import 'shared/config/i18n/i18n';
 export const App = () => {
   return (
     <div className={classNames('app', {})}>
-      <Suspense fallback={''}>
+      <Suspense fallback="">
         <Navbar />
-        <div className={'content-page'}>
+        <div className="content-page">
           <Sidebar />
           <AppRouter />
         </div>
