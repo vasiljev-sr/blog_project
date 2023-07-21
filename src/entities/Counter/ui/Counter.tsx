@@ -16,9 +16,13 @@ export const Counter = () => {
 
   return (
     <div>
-      <p>{`Value: ${value}`}</p>
-      <Button onClick={increment}>{'increment'}</Button>
-      <Button onClick={decrement}>{'decrement'}</Button>
+      <p data-testid={'title'}>{value}</p>
+      <Button data-testid={'increment-btn'} onClick={increment}>
+        {'increment'}
+      </Button>
+      <Button data-testid={'decrement-btn'} onClick={decrement}>
+        {'decrement'}
+      </Button>
     </div>
   );
 };
