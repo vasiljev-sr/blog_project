@@ -1,0 +1,26 @@
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: unset;
+  border: 1px solid var(--primary-color);
+  width: 100%;
+
+  &:focus {
+    outline: none !important;
+    border: 2px solid var(--primary-color);
+  }
+}
+
+.label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  padding: 0 5px;
+  font: var(--font-s);
+  color: var(--secondary-color);
+  background-color: var(--inverted-bg-color);
+}
