@@ -20,6 +20,7 @@ interface InputProps extends HTMLInputProps {
   label?: string;
   onChange?: (value: string) => void;
   autoFocus?: boolean;
+  fullWidth?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -30,6 +31,7 @@ export const Input = memo((props: InputProps) => {
     type = 'text',
     label,
     autoFocus,
+    fullWidth = false,
     ...restProps
   } = props;
 
@@ -52,7 +54,7 @@ export const Input = memo((props: InputProps) => {
         ref={ref}
         value={value}
         onChange={handleChange}
-        className={cls.input}
+        className={classNames(cls.input, { [cls.fullWidth]: fullWidth })}
         type={type}
         autoFocus={autoFocus}
         {...restProps}

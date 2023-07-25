@@ -17,7 +17,7 @@ export const Primary: Story = {
 };
 
 export const PrimaryDark: Story = {
-  args: {},
+  args: { value: 'Input' },
   decorators: [ThemeDecorator('dark')],
 };
 
