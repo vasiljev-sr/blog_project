@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-import { buildCssLoaders } from "./loaders/buildCssLoaders";
+import { buildCssLoaders } from './loaders/buildCssLoaders';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;
@@ -26,7 +26,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  const cssLoader = buildCssLoaders(isDev)
+  const cssLoader = buildCssLoaders(isDev);
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,

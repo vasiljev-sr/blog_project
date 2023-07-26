@@ -1,4 +1,4 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export const buildCssLoaders = (isDev: boolean) => {
   return {
@@ -10,11 +10,13 @@ export const buildCssLoaders = (isDev: boolean) => {
         options: {
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:4]' : '[hash:base64:8]',
+            localIdentName: isDev
+              ? '[path][name]__[local]--[hash:base64:4]'
+              : '[hash:base64:8]',
           },
         },
       },
       'sass-loader',
     ],
   };
-}
+};

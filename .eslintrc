@@ -1,9 +1,11 @@
 {
-  "extends": ["eslint:recommended",
-              "plugin:@typescript-eslint/recommended",
-              "plugin:react/recommended",
-              "plugin:i18next/recommended",
-              "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:i18next/recommended",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["i18next", "react-hooks"],
   "parserOptions": {
@@ -14,9 +16,9 @@
     }
   },
   "settings": {
-     "react" : {
-       "version": "detect"
-     }
+    "react": {
+      "version": "detect"
+    }
   },
   "env": {
     "browser": true,
@@ -28,24 +30,26 @@
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-var-requires": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn" ,
-    "i18next/no-literal-string": ["warn",  {"markupOnly":  true,
-      "ignoreAttribute": ["data-testid", "to"]
-
-    } ],
-    "react/jsx-curly-brace-presence": ["error", {"props": "never",  "children": "never" }],
+    "react-hooks/exhaustive-deps": "warn",
+    "i18next/no-literal-string": [
+      "warn",
+      { "markupOnly": true, "ignoreAttribute": ["data-testid", "to"] }
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { "props": "never", "children": "never" }
+    ],
     "react/display-name": "warn"
   },
   "globals": {
     "__IS_DEV__": true
   },
-  "overrides": [{
-    "files": [
-      "**/src/**/*.test.{ts,tsx}"
-    ],
-    "rules": {
-      "i18next/no-literal-string": "off"
-
+  "overrides": [
+    {
+      "files": ["**/src/**/*.test.{ts,tsx}"],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      }
     }
-  }]
+  ]
 }

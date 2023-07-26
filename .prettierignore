@@ -1,0 +1,8 @@
+dist/
+coverage/
+json-server/
+.loki/
+.husky/
+.github/
+tsconfig.json
+storybook-static/
