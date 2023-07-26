@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Button.module.scss';
 import { ButtonHTMLAttributes, FC } from 'react';
 
-export type ButtonTheme = 'clear' | 'outlined' | 'background' | 'inverted';
+import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './Button.module.scss';
 
+export type ButtonTheme = 'clear' | 'outlined' | 'background' | 'inverted';
 export type ButtonSize = 'size_m' | 'size_l' | 'size_xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,12 +11,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme;
   square?: boolean;
   size?: ButtonSize;
+  disabled?: boolean;
 }
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const { className, theme, children, square, size, ...otherProps } = props;
+  const { className, theme, children, disabled, square, size, ...otherProps } =
+    props;
 
   const mods: Record<string, boolean> = {
     [cls.square]: square,
+    [cls.disabled]: disabled,
   };
   return (
     <button
@@ -25,8 +28,9 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
         cls[theme],
         cls[size],
       ])}
-      {...otherProps}
       type="button"
+      disabled={disabled}
+      {...otherProps}
     >
       {children}
     </button>
