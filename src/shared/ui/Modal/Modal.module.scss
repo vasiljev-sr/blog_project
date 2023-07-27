@@ -24,8 +24,8 @@
   background-color: var(--inverted-bg-color);
   transition: transform 0.3s, opacity 0.3s;
   transform: scale(0.5);
-  max-width: 60%;
   opacity: 1;
+  margin: 0 8px;
 }
 
 .opened {

@@ -38,7 +38,7 @@ export const LoginForm = memo((props: LoginFormProps) => {
   }, [dispatch, username, password]);
 
   return (
-    <form className={classNames(cls.LoginForm, {}, [className])}>
+    <div className={classNames(cls.LoginForm, {}, [className])}>
       <Text title={t('Форма авторизации')} />
       {error && <Text text={error} theme="error" />}
       <Input
@@ -64,6 +64,6 @@ export const LoginForm = memo((props: LoginFormProps) => {
       >
         {t('Войти')}
       </Button>
-    </form>
+    </div>
   );
 });

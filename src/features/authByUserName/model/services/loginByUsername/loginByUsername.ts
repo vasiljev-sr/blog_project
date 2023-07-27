@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { User, userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localstorage';
+import i18n from 'i18next';
 
 interface LoginByUsernameProps {
   username: string;
@@ -21,6 +22,6 @@ export const loginByUsername = createAsyncThunk<
     thunkAPI.dispatch(userActions.setAuthData(response.data));
   } catch (e) {
     console.log(e);
-    return thunkAPI.rejectWithValue('error');
+    return thunkAPI.rejectWithValue(i18n.t('Указаны неверные данные'));
   }
 });

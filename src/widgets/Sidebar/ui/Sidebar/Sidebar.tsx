@@ -1,11 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Sidebar.module.scss';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import cls from './Sidebar.module.scss';
+
+import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { Button } from 'shared/ui/Button/Button';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { useTranslation } from 'react-i18next';
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
 import HomeIcon from 'shared/assets/icons/home.svg';
 import AboutIcon from 'shared/assets/icons/about.svg';
@@ -21,6 +22,7 @@ export const Sidebar = (props: SidebarProps) => {
   const onToggle = () => {
     setCollapsed((prevState) => !prevState);
   };
+
   return (
     <div
       data-testid="sidebar"
