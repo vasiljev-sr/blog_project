@@ -7,7 +7,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 const meta: Meta<typeof LoginModal> = {
   title: 'features/LoginModal',
   component: LoginModal,
-  decorators: [StoreDecorator({ auth: { username: '', password: '' } })],
+  decorators: [],
 };
 
 export default meta;
@@ -17,9 +17,34 @@ export const Primary: Story = {
   args: {
     isOpen: true,
   },
+  decorators: [StoreDecorator({ authForm: { username: '', password: '' } })],
 };
 
 export const PrimaryDark: Story = {
   args: { isOpen: true },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [
+    ThemeDecorator('dark'),
+    StoreDecorator({ authForm: { username: '', password: '' } }),
+  ],
+};
+
+export const Error: Story = {
+  args: {
+    isOpen: true,
+  },
+  decorators: [
+    StoreDecorator({
+      authForm: { username: '', password: '', error: 'Some error' },
+    }),
+  ],
+};
+export const Loading: Story = {
+  args: {
+    isOpen: true,
+  },
+  decorators: [
+    StoreDecorator({
+      authForm: { username: '', password: '', isLoading: true },
+    }),
+  ],
 };

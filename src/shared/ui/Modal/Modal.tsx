@@ -27,7 +27,9 @@ export const Modal = (props: ModalProps) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    if (isOpen) {
+      setIsMounted(true);
+    }
   }, [isOpen]);
 
   const onClose = useCallback(() => {

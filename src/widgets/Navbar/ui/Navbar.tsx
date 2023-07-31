@@ -1,34 +1,29 @@
 import cls from './Navbar.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { loginActions, LoginModal } from 'features/authByUserName';
+import { LoginModal } from 'features/authByUserName';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import { getLoginState } from 'features/authByUserName/model/selectors/getLoginState/getLoginState';
 
 interface NavbarProps {
   className?: string;
 }
 export const Navbar = (props: NavbarProps) => {
   const { className } = props;
-  // const [open, setOpen] = useState(false);
-  const { isOpenModal } = useSelector(getLoginState);
+  const [open, setOpen] = useState(false);
 
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
 
   const { t } = useTranslation();
 
-  const onCloseModal = useCallback(
-    () => dispatch(loginActions.closeModal()),
-    [dispatch]
-  );
+  const onCloseModal = useCallback(() => setOpen(false), []);
 
   const onOpenModal = useCallback(() => {
-    dispatch(loginActions.openModal());
-  }, [dispatch]);
+    setOpen(true);
+  }, []);
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
@@ -47,7 +42,7 @@ export const Navbar = (props: NavbarProps) => {
           <Button theme="outlined" className={cls.links} onClick={onOpenModal}>
             {t('Войти')}
           </Button>
-          <LoginModal isOpen={isOpenModal} onClose={onCloseModal} />
+          <LoginModal isOpen={open} onClose={onCloseModal} />
         </>
       )}
     </div>

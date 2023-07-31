@@ -6,7 +6,6 @@ const initialState: LoginSchema = {
   username: '',
   password: '',
   isLoading: false,
-  isOpenModal: false,
 };
 export const loginSlice = createSlice({
   name: 'login',
@@ -18,15 +17,6 @@ export const loginSlice = createSlice({
     setPassword: (state, action: PayloadAction<string>) => {
       state.password = action.payload;
     },
-    openModal: (state) => {
-      state.isOpenModal = true;
-    },
-    closeModal: (state) => {
-      state.isOpenModal = false;
-      state.error = '';
-      state.username = '';
-      state.password = '';
-    },
   },
   extraReducers: (builder) => {
     builder.addCase(loginByUsername.pending, (state) => {
@@ -35,7 +25,6 @@ export const loginSlice = createSlice({
     });
     builder.addCase(loginByUsername.fulfilled, (state) => {
       state.isLoading = false;
-      state.isOpenModal = false;
     });
     builder.addCase(loginByUsername.rejected, (state, action) => {
       state.isLoading = false;
