@@ -3,7 +3,7 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginState } from './getLoginState';
 
 describe('getLoginState.test', () => {
-  test('should return auth data', () => {
+  test('should return login data', () => {
     const state: DeepPartial<StateSchema> = {
       authForm: {
         username: 'user',
@@ -19,7 +19,7 @@ describe('getLoginState.test', () => {
       isLoading: false,
     });
   });
-  test('auth data is undefined', () => {
+  test('login data is undefined', () => {
     const state: DeepPartial<StateSchema> = {};
     expect(getLoginState(state as StateSchema)).toBe(undefined);
   });
