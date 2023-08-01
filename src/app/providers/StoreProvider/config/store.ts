@@ -27,6 +27,7 @@ export function createReduxStore(
 
   return store;
 }
+
 const store = createReduxStore();
 
 export type RootState = ReturnType<typeof store.getState>;
