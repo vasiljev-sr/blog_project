@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
+import { memo } from 'react';
 
 type TextThemes = 'primary' | 'error';
 interface TextProps {
@@ -8,7 +9,7 @@ interface TextProps {
   text?: string;
   theme?: TextThemes;
 }
-export const Text = (props: TextProps) => {
+export const Text = memo(function Text(props: TextProps) {
   const { className, title, text, theme = 'primary' } = props;
   return (
     <div className={classNames(cls.Text, {}, [className, cls[theme]])}>
@@ -16,4 +17,4 @@ export const Text = (props: TextProps) => {
       {text && <p className={cls.text}>{text}</p>}
     </div>
   );
-};
+});

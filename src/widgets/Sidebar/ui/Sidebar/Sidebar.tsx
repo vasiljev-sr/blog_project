@@ -7,9 +7,9 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { Button } from 'shared/ui/Button/Button';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
-import HomeIcon from 'shared/assets/icons/home.svg';
-import AboutIcon from 'shared/assets/icons/about.svg';
+import { routePaths } from 'shared/config/routeConfig/routeConfig';
+import { sidebarItemsList } from 'widgets/Sidebar/model/items';
+import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 
 interface SidebarProps {
   className?: string;
@@ -17,7 +17,6 @@ interface SidebarProps {
 export const Sidebar = (props: SidebarProps) => {
   const { className } = props;
   const [collapsed, setCollapsed] = useState(false);
-  const { t } = useTranslation();
 
   const onToggle = () => {
     setCollapsed((prevState) => !prevState);
@@ -31,14 +30,9 @@ export const Sidebar = (props: SidebarProps) => {
       ])}
     >
       <div className={cls.items}>
-        <AppLink to={RoutePaths.main} className={cls.item} theme="secondary">
-          <HomeIcon className={cls.icon} />
-          <span className={cls.link}> {t('Главная')}</span>
-        </AppLink>
-        <AppLink to={RoutePaths.about} theme="secondary" className={cls.item}>
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}> {t('О проеке')}</span>
-        </AppLink>
+        {sidebarItemsList.map((item) => (
+          <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+        ))}
       </div>
       <Button
         data-testid="sidebar-toggle"

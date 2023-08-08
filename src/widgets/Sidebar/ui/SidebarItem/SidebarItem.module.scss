@@ -1,0 +1,25 @@
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.icon {
+  fill: var(--secondary-color);
+  flex-shrink: 0;
+}
+
+.link {
+  color: var(--secondary-color);
+  white-space: nowrap;
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    width: 0;
+    height: 24px;
+    transition: 0.2s opacity;
+  }
+}

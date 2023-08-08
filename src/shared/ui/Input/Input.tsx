@@ -23,7 +23,7 @@ interface InputProps extends HTMLInputProps {
   fullWidth?: boolean;
 }
 
-export const Input = memo((props: InputProps) => {
+export const Input = memo(function Input(props: InputProps) {
   const {
     className,
     value,
