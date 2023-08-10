@@ -1,8 +1,9 @@
-type Mods = Record<string, boolean>;
+import { Mods } from 'shared/lib/types/common';
+
 export const classNames = (
   cls: string,
   mods: Mods = {},
-  additional: string[] = []
+  additional: Array<string | undefined> = []
 ): string => {
   const positiveMods = Object.entries(mods)
     .filter(([_, condition]) => Boolean(condition))

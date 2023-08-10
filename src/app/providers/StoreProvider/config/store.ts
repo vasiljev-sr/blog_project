@@ -1,6 +1,6 @@
 import { NavigateFunction } from 'react-router-dom';
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { StateSchema } from './StateSchema';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { userReducer } from 'entities/User';
 
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
@@ -18,17 +18,21 @@ export function createReduxStore(
 
   const reducerManager = createReducerManager(rooReducer);
 
+  const extraArg: ThunkExtraArg = {
+    api: $api,
+    navigate: navigate,
+  };
+
   const store = configureStore({
-    reducer: reducerManager.reduce,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         thunk: {
-          extraArgument: {
-            api: $api,
-            navigate: navigate,
-          },
+          extraArgument: extraArg,
         },
       }),
   });

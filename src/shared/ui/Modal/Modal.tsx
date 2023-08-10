@@ -1,6 +1,7 @@
 import {
   KeyboardEvent,
   MouseEvent,
+  MutableRefObject,
   ReactNode,
   useCallback,
   useEffect,
@@ -10,6 +11,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import { Portal } from 'shared/ui/Portal/Portal';
+import { Mods } from 'shared/lib/types/common';
 
 interface ModalProps {
   className?: string;
@@ -23,7 +25,7 @@ const ANIMATION_DELAY = 200;
 export const Modal = (props: ModalProps) => {
   const { className, children, isOpen, closeModal, lazy } = props;
   const [isClosing, setIsClosing] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -73,7 +75,7 @@ export const Modal = (props: ModalProps) => {
     event.stopPropagation();
   };
 
-  const mods = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.closing]: isClosing,
   };

@@ -16,7 +16,7 @@ export const ThemeSwitcher = memo(function ThemeSwitcher(
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme || 'light');
   }, [theme]);
 
   return (

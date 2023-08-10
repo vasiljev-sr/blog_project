@@ -1,4 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods } from 'shared/lib/types/common';
 
 describe('classNames', () => {
   test('С основным классом', () => {
@@ -10,7 +11,7 @@ describe('classNames', () => {
     expect(classNames('class', {}, additional)).toBe(expected);
   });
   test('С объектом mods', () => {
-    const mods = { hovered: true, expected: false };
+    const mods: Mods = { hovered: true, expected: false };
     const expected = 'class hovered';
     expect(classNames('class', mods)).toBe(expected);
   });
