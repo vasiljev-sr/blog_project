@@ -1,5 +1,6 @@
 .inputWrapper {
   position: relative;
+  padding: 8px 0;
 }
 
 .input {
@@ -17,14 +18,25 @@
 
 .label {
   position: absolute;
-  top: -10px;
+  top: -3px;
   left: 10px;
   padding: 0 5px;
   font: var(--font-s);
   color: var(--secondary-color);
-  background-color: var(--inverted-bg-color);
 }
 
 .fullWidth {
   width: 100%;
+}
+
+.outlined {
+  .label {
+    background-color: var(--bg-color);
+  }
+}
+
+.outlined-inverted {
+  .label {
+    background-color: var(--inverted-bg-color);
+  }
 }

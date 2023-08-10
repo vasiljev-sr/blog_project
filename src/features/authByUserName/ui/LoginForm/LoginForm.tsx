@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from './LoginForm.module.scss';
@@ -68,6 +68,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           fullWidth
           onChange={onChangeUsername}
           value={username}
+          theme="outlined-inverted"
         />
         <Input
           className={cls.input}
@@ -75,6 +76,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           fullWidth
           onChange={onChangePassword}
           value={password}
+          theme="outlined-inverted"
         />
         <Button
           className={cls.loginBtn}

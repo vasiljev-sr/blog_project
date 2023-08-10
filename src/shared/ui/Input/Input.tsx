@@ -18,6 +18,7 @@ interface InputProps extends HTMLInputProps {
   value?: string;
   type?: string;
   label?: string;
+  theme?: 'outlined' | 'outlined-inverted';
   onChange?: (value: string) => void;
   autoFocus?: boolean;
   fullWidth?: boolean;
@@ -32,6 +33,7 @@ export const Input = memo(function Input(props: InputProps) {
     label,
     autoFocus,
     fullWidth = false,
+    theme = 'outlined',
     ...restProps
   } = props;
 
@@ -48,7 +50,7 @@ export const Input = memo(function Input(props: InputProps) {
   }, [autoFocus]);
 
   return (
-    <div className={classNames(cls.inputWrapper, {}, [className])}>
+    <div className={classNames(cls.inputWrapper, {}, [className, cls[theme]])}>
       {label && <label className={cls.label}>{label}</label>}
       <input
         ref={ref}
