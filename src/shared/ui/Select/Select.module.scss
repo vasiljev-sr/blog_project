@@ -7,12 +7,20 @@
 }
 
 .select {
+  padding: 4px 16px;
   border: 1px solid var(--primary-color);
   background-color: unset;
+  border-radius: 4px;
   outline: none;
   color: var(--secondary-color);
 
   &:focus {
     border: 2px solid var(--primary-color);
   }
+}
+
+.option {
+  background-color: var(--inverted-bg-color);
+  color: var(--primary-color);
+
 }
