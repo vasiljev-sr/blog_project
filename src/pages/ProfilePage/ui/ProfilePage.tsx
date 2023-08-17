@@ -3,12 +3,13 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-  fetchProfileData,
-  ProfileCard,
-  profileReducer,
-} from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {
+  EditableProfileCard,
+  fetchProfileData,
+  profileReducer,
+} from 'features/editableProfileCard';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -22,7 +23,8 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} unmountReducers>
-      <ProfileCard />
+      <ProfilePageHeader />
+      <EditableProfileCard />
     </DynamicModuleLoader>
   );
 };

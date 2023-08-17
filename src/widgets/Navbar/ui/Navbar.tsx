@@ -39,7 +39,7 @@ export const Navbar = memo(function Navbar(props: NavbarProps) {
         </>
       ) : (
         <>
-          <Button theme="outlined" className={cls.links} onClick={onOpenModal}>
+          <Button theme="clear" className={cls.links} onClick={onOpenModal}>
             {t('Войти')}
           </Button>
           <LoginModal isOpen={open} onClose={onCloseModal} />

@@ -8,8 +8,7 @@ import { $api } from 'shared/api/api';
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: NavigateFunction
+  asyncReducers?: ReducersMapObject<StateSchema>
 ) {
   const rooReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -20,7 +19,6 @@ export function createReduxStore(
 
   const extraArg: ThunkExtraArg = {
     api: $api,
-    navigate: navigate,
   };
 
   const store = configureStore({

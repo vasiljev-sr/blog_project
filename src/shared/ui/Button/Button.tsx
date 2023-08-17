@@ -6,10 +6,12 @@ import { Mods } from 'shared/lib/types/common';
 
 export type ButtonTheme = 'clear' | 'outlined' | 'background' | 'inverted';
 export type ButtonSize = 'size_m' | 'size_l' | 'size_xl';
+export type ButtonColor = 'primary' | 'error' | 'success';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: ButtonTheme;
+  color?: ButtonColor;
   square?: boolean;
   size?: ButtonSize;
   disabled?: boolean;
@@ -24,6 +26,7 @@ export const Button: FC<ButtonProps> = memo(function Button(
     disabled,
     square,
     size = 'size_m',
+    color = 'primary',
     ...otherProps
   } = props;
 
@@ -37,6 +40,7 @@ export const Button: FC<ButtonProps> = memo(function Button(
         className,
         cls[theme],
         cls[size],
+        cls[color],
       ])}
       type="button"
       disabled={disabled}

@@ -8,8 +8,8 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
+import { ProfileSchema } from 'features/editableProfileCard';
 export interface StateSchema {
   user: UserSchema;
   authForm?: LoginSchema;
@@ -37,4 +37,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
   rejectValue: T;
   extra: ThunkExtraArg;
+  state: StateSchema;
 }

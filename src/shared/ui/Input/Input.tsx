@@ -7,6 +7,7 @@ import {
   useEffect,
   useRef,
 } from 'react';
+import { Mods } from 'shared/lib/types/common';
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -15,13 +16,14 @@ type HTMLInputProps = Omit<
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   type?: string;
   label?: string;
   theme?: 'outlined' | 'outlined-inverted';
   onChange?: (value: string) => void;
   autoFocus?: boolean;
   fullWidth?: boolean;
+  readOnly?: boolean;
 }
 
 export const Input = memo(function Input(props: InputProps) {
@@ -34,6 +36,7 @@ export const Input = memo(function Input(props: InputProps) {
     autoFocus,
     fullWidth = false,
     theme = 'outlined',
+    readOnly = false,
     ...restProps
   } = props;
 
@@ -49,16 +52,24 @@ export const Input = memo(function Input(props: InputProps) {
     }
   }, [autoFocus]);
 
+  const mods: Mods = {
+    [cls.readonly]: readOnly,
+    [cls.fullWidth]: fullWidth,
+  };
+
   return (
-    <div className={classNames(cls.inputWrapper, {}, [className, cls[theme]])}>
+    <div
+      className={classNames(cls.inputWrapper, mods, [className, cls[theme]])}
+    >
       {label && <label className={cls.label}>{label}</label>}
       <input
         ref={ref}
         value={value}
         onChange={handleChange}
-        className={classNames(cls.input, { [cls.fullWidth]: fullWidth })}
+        className={classNames(cls.input, mods)}
         type={type}
         autoFocus={autoFocus}
+        readOnly={readOnly}
         {...restProps}
       />
     </div>

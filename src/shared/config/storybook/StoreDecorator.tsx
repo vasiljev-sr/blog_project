@@ -1,8 +1,9 @@
 import { StoryFn } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { profileReducer } from 'entities/Profile';
+
 import { loginReducer } from 'features/authByUserName';
 import { ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { profileReducer } from 'features/editableProfileCard';
 
 // eslint-disable-next-line react/display-name
 

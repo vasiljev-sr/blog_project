@@ -40,3 +40,9 @@
     background-color: var(--inverted-bg-color);
   }
 }
+
+.readonly {
+  .input {
+    border-color: var(--primary-color-alpha40);
+  }
+}
