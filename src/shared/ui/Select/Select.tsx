@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 import { ChangeEvent, useCallback, useMemo } from 'react';
 
-interface SelectOptions {
+export interface SelectOptions {
   value?: string;
   option: string;
 }

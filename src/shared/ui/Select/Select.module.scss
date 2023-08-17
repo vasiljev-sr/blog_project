@@ -1,5 +1,6 @@
 .Wrapper {
   display: flex;
+  align-items: center;
 }
 
 .label {
@@ -20,7 +21,7 @@
 }
 
 .option {
-  background-color: var(--inverted-bg-color);
+  background-color: var(--bg-color);
   color: var(--primary-color);
 
 }

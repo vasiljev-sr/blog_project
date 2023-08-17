@@ -13,5 +13,7 @@
   "Пароль": "Password",
   "Форма авторизации": "Authorization form",
   "Выйти": "Log out",
-  "Указаны неверные данные": "Invalid data entered"
+  "Указаны неверные данные": "Invalid data entered",
+  "Валюта": "Валюта",
+  "Страна": "Страна"
 }
