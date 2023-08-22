@@ -6,6 +6,8 @@ import { ProfileData } from 'features/editableProfileCard';
 import { Text } from 'shared/ui/Text/Text';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Currency, CurrencySelect } from 'entities/Currency';
+import { Country, CountrySelect } from 'entities/Country';
 
 interface ProfileCardProps {
   className?: string;
@@ -19,6 +21,8 @@ interface ProfileCardProps {
   onChangeCity?: (value?: string) => void;
   onChangeUsername?: (value?: string) => void;
   onChangeAvatar?: (value?: string) => void;
+  onChangeCurrency?: (value?: Currency) => void;
+  onChangeCountry?: (value?: Country) => void;
 }
 export const ProfileCard = (props: ProfileCardProps) => {
   const {
@@ -33,6 +37,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onChangeAvatar,
     onChangeCity,
     onChangeUsername,
+    onChangeCurrency,
+    onChangeCountry,
   } = props;
   const { t } = useTranslation('profile');
 
@@ -104,6 +110,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
         label={t('Ссылка на аватар')}
         readOnly={readonly}
         onChange={onChangeAvatar}
+      />
+      <CurrencySelect
+        value={data?.currency}
+        onChange={onChangeCurrency}
+        className={cls.input}
+        disabled={readonly}
+      />
+      <CountrySelect
+        value={data?.country}
+        onChange={onChangeCountry}
+        className={cls.input}
+        disabled={readonly}
       />
     </div>
   );

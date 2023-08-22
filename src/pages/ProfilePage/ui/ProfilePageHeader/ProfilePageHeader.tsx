@@ -33,7 +33,6 @@ export const ProfilePageHeader = memo(function ProfilePageHeader(
 
   const onSave = useCallback(() => {
     dispatch(updateProfileData());
-    dispatch(profileActions.setReadonly(true));
   }, [dispatch]);
 
   return (

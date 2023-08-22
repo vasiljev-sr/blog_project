@@ -9,6 +9,8 @@ import {
 } from 'features/editableProfileCard';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 
 // interface EditableProfileCardProps {
 //   className?: string;
@@ -59,6 +61,19 @@ export const EditableProfileCard = () => {
     },
     [dispatch]
   );
+  const onChangeCurrency = useCallback(
+    (value?: Currency) => {
+      dispatch(profileActions.updateProfile({ currency: value }));
+    },
+    [dispatch]
+  );
+  const onChangeCountry = useCallback(
+    (value?: Country) => {
+      dispatch(profileActions.updateProfile({ country: value }));
+    },
+    [dispatch]
+  );
+
   return (
     <>
       <ProfileCard
@@ -72,6 +87,8 @@ export const EditableProfileCard = () => {
         onChangeAvatar={onChangeAvatar}
         onChangeCity={onChangeCity}
         onChangeUsername={onChangeUsername}
+        onChangeCountry={onChangeCountry}
+        onChangeCurrency={onChangeCurrency}
       />
     </>
   );

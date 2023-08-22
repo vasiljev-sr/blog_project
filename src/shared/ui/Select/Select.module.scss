@@ -1,14 +1,23 @@
 .Wrapper {
   display: flex;
   align-items: center;
+  position: relative;
+  padding: 8px 0;
 }
 
 .label {
-  margin-right: 8px;
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  padding: 0 5px;
+  font: var(--font-s);
+  color: var(--secondary-color);
+  background-color: var(--bg-color);
+  z-index: var(--select-label-zindex);
 }
 
 .select {
-  padding: 4px 16px;
+  padding: 8px 16px;
   border: 1px solid var(--primary-color);
   background-color: unset;
   border-radius: 4px;

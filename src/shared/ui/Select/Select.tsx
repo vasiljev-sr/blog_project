@@ -12,9 +12,10 @@ interface SelectProps {
   options?: SelectOptions[];
   value?: string;
   onChangeValue?: (value: string) => void;
+  disabled?: boolean;
 }
 export const Select = (props: SelectProps) => {
-  const { className, label, options, value, onChangeValue } = props;
+  const { className, label, options, value, onChangeValue, disabled } = props;
 
   const onHandleChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
@@ -35,7 +36,12 @@ export const Select = (props: SelectProps) => {
   return (
     <div className={classNames(cls.Wrapper, {}, [className])}>
       {label && <span className={cls.label}>{label}</span>}
-      <select className={cls.select} value={value} onChange={onHandleChange}>
+      <select
+        className={cls.select}
+        value={value}
+        onChange={onHandleChange}
+        disabled={disabled}
+      >
         {selectOptions}
       </select>
     </div>
