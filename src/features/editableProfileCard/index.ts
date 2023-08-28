@@ -5,3 +5,4 @@ export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCar
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 export { getProfileData } from './model/selectors/getProfileData/getProfileData';
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
+export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateError';
