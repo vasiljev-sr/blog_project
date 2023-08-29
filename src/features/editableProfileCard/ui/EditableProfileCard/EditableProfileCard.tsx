@@ -8,7 +8,7 @@ import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateError';
+import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { profileActions } from '../../model/slice/profileSlice';
 import { Text } from 'shared/ui/Text/Text';
