@@ -4,7 +4,7 @@ import ProfilePage from './ProfilePage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-
+import image from 'shared/assets/test/cat.png';
 const meta: Meta<typeof ProfilePage> = {
   title: 'pages/ProfilePage',
   component: ProfilePage,
@@ -21,7 +21,7 @@ export const Light: Story = {
         form: {
           first_name: 'Ravil',
           last_name: 'Vasilev',
-          avatar: 'https://loremflickr.com/480/320',
+          avatar: image,
           age: 26,
           username: 'admin',
           country: Country.Russia,
@@ -42,7 +42,7 @@ export const Dark: Story = {
         form: {
           first_name: 'Ravil',
           last_name: 'Vasilev',
-          avatar: 'https://loremflickr.com/480/320',
+          avatar: image,
           age: 26,
           username: 'admin',
           country: Country.Russia,

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
+import image from 'shared/assets/test/cat.png';
 import { ProfileCard } from './ProfileCard';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
@@ -17,7 +17,7 @@ export const Primary: Story = {
     data: {
       first_name: 'Ravil',
       last_name: 'Vasilev',
-      avatar: 'https://loremflickr.com/480/320',
+      avatar: image,
       age: 26,
       username: 'admin',
       country: Country.Russia,
