@@ -10,10 +10,12 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ProfileSchema } from 'features/editableProfileCard';
+import { ArticlesSchema } from 'entities/Article/';
 export interface StateSchema {
   user: UserSchema;
   authForm?: LoginSchema;
   profile?: ProfileSchema;
+  articleDetails?: ArticlesSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
