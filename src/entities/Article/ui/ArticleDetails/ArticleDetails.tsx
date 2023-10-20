@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetails.module.scss';
 import { useTranslation } from 'react-i18next';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -13,9 +13,18 @@ import { useSelector } from 'react-redux';
 import {
   getArticleDetails,
   getArticleError,
+  getArticleLoading,
 } from '../../model/selectors/articleDetails';
 import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import EyeIcon from 'shared/assets/icons/eye.svg';
+import CalendarIcon from 'shared/assets/icons/calendar.svg';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -33,13 +42,32 @@ export const ArticleDetails = memo(function ArticleDetails(
   const dispatch = useAppDispatch();
 
   // const isLoading = useSelector(getArticleLoading);
-  const isLoading = true;
+  const isLoading = useSelector(getArticleLoading);
   const error = useSelector(getArticleError);
   const article = useSelector(getArticleDetails);
 
   useEffect(() => {
     dispatch(fetchArticleById(id));
   }, [dispatch, id]);
+
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case 'CODE':
+        return (
+          <ArticleCodeBlockComponent block={block} className={cls.block} />
+        );
+      case 'IMAGE':
+        return (
+          <ArticleImageBlockComponent block={block} className={cls.block} />
+        );
+      case 'TEXT':
+        return (
+          <ArticleTextBlockComponent block={block} className={cls.block} />
+        );
+      default:
+        return null;
+    }
+  }, []);
 
   let content;
 
@@ -67,7 +95,25 @@ export const ArticleDetails = memo(function ArticleDetails(
       />
     );
   } else {
-    content = 'Article details';
+    content = (
+      <>
+        <div className={cls.avatarWrapper}>
+          {article?.img && (
+            <Avatar size={200} src={article?.img} className={cls.avatar} />
+          )}
+        </div>
+        <Text title={article?.title} text={article?.subtitle} size="size_l" />
+        <div className={cls.articleInfo}>
+          <Icon Svg={EyeIcon} />
+          <Text text={String(article?.views)} />
+        </div>
+        <div className={cls.articleInfo}>
+          <Icon Svg={CalendarIcon} />
+          <Text text={article?.createdAt} />
+        </div>
+        {article?.blocks.map((block) => renderBlock(block))}
+      </>
+    );
   }
 
   return (

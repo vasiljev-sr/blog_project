@@ -1,2 +1,9 @@
-.ArticleImageBlockComponent {
+.imgWrapper{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.img {
+  max-width: 100%;
 }

@@ -52,3 +52,21 @@ export const WithErrorDark: Story = {
   },
   decorators: [ThemeDecorator('dark')],
 };
+
+export const SizeM: Story = {
+  args: {
+    title: 'Title',
+    text: 'text text text',
+    size: 'size_m',
+  },
+  decorators: [ThemeDecorator('dark')],
+};
+
+export const SizeL: Story = {
+  args: {
+    title: 'Title',
+    text: 'text text text',
+    size: 'size_l',
+  },
+  decorators: [ThemeDecorator('dark')],
+};
