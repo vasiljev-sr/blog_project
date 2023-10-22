@@ -9,8 +9,21 @@
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": "1"
+      "text": "comment 1",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "comment 2",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text": "comment 3",
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "profile": {
@@ -98,7 +111,8 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "avatar": "https://loremflickr.com/480/320"
     }
   ]
 }

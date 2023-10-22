@@ -10,4 +10,22 @@ const meta: Meta<typeof Code> = {
 export default meta;
 type Story = StoryObj<typeof Code>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {
+    text: `export const Code = memo(function Code(props: CodeProps) {
+  const { className, text } = props;
+
+  const onCopy = useCallback(() => {
+    navigator.clipboard.writeText(text);
+  }, [text]);
+  return (
+    <pre className={classNames(cls.Code, {}, [className])}>
+      <Button className={cls.copyBtn} onClick={onCopy}>
+        <Icon Svg={CopyIcon} />
+      </Button>
+      <code>{text}</code>
+    </pre>
+  );
+});`,
+  },
+};

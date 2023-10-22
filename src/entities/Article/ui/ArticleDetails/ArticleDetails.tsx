@@ -8,7 +8,7 @@ import {
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articlesReducer } from '../../model/slice/articleDetailsSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchArticleById } from '../../model/services/fetchArticleById';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
 import {
   getArticleDetails,
@@ -25,6 +25,8 @@ import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { CommentList } from 'entities/Comment';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -46,9 +48,7 @@ export const ArticleDetails = memo(function ArticleDetails(
   const error = useSelector(getArticleError);
   const article = useSelector(getArticleDetails);
 
-  useEffect(() => {
-    dispatch(fetchArticleById(id));
-  }, [dispatch, id]);
+  useInitialEffect(() => dispatch(fetchArticleById(id)));
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {

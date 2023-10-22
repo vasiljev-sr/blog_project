@@ -1,0 +1,14 @@
+.CommentCard {
+  padding: 16px;
+  border: 1px solid var(--primary-color);
+}
+
+.header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.commentText {
+  margin-top: 8px;
+}

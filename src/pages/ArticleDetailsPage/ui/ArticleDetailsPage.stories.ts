@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import image from 'shared/assets/test/cat.png';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const meta: Meta<typeof ArticleDetailsPage> = {
-  title: 'shared/ArticleDetailsPage',
+  title: 'pages/ArticleDetailsPage',
   component: ArticleDetailsPage,
 };
 

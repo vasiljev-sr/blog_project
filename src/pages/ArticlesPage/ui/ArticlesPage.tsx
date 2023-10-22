@@ -1,8 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articlesReducer } from 'entities/Article';
 
 interface ArticlesPageProps {
   className?: string;
