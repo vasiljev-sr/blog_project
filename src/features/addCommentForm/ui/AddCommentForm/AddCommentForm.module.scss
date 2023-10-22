@@ -1,0 +1,13 @@
+.AddCommentForm {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.submitBtn{
+  padding: 8px 16px;
+}

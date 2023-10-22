@@ -12,12 +12,14 @@ import { AxiosInstance } from 'axios';
 import { ProfileSchema } from 'features/editableProfileCard';
 import { ArticlesSchema } from 'entities/Article/';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { CommentFormSchema } from 'features/addCommentForm';
 export interface StateSchema {
   user: UserSchema;
   authForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticlesSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
+  addCommentForm?: CommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

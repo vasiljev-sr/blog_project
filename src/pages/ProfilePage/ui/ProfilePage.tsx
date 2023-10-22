@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -10,21 +9,24 @@ import {
   profileReducer,
 } from 'features/editableProfileCard';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 const reducers: ReducersList = {
   profile: profileReducer,
 };
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   return (
-    <DynamicModuleLoader reducers={reducers} unmountReducers>
+    <DynamicModuleLoader reducers={reducers}>
       <ProfilePageHeader />
       <EditableProfileCard />
     </DynamicModuleLoader>

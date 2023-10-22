@@ -21,7 +21,7 @@ export type AppRoutes =
 export const routePaths: Record<AppRoutes, string> = {
   main: '/',
   about: '/about',
-  profile: '/profile',
+  profile: '/profile/',
   articles: '/articles',
   articleDetails: '/articles/',
   //last
@@ -38,7 +38,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     element: <AboutPage />,
   },
   profile: {
-    path: routePaths.profile,
+    path: routePaths.profile + ':id',
     element: <ProfilePage />,
     authOnly: true,
   },
