@@ -9,6 +9,7 @@ import { Comment } from 'entities/Comment';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { loginByUsername } from 'features/authByUserName/model/services/loginByUsername/loginByUsername';
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,
@@ -40,6 +41,17 @@ const articleDetailsCommentsSlice = createSlice({
       }
     );
     builder.addCase(fetchCommentsByArticleId.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
+    builder.addCase(addCommentForArticle.pending, (state) => {
+      state.isLoading = true;
+      state.error = '';
+    });
+    builder.addCase(addCommentForArticle.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(addCommentForArticle.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
     });

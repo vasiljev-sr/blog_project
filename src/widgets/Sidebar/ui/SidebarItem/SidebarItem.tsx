@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './SidebarItem.module.scss';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { SidebarItemType } from '../../model/items';
+import { SidebarItemType } from '../../model/types/sidebar';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

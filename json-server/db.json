@@ -18,18 +18,6 @@
       "text": "comment 2",
       "articleId": "1",
       "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "comment 3",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "text": "Привет, классная статья",
-      "articleId": "1",
-      "userId": "1",
-      "id": "wIuhoNL"
     }
   ],
   "profile": [
@@ -46,7 +34,7 @@
     },
     {
       "id": "2",
-      "first_name": "Danil",
+      "first_name": "Danil12",
       "last_name": "Vasilev",
       "age": 21,
       "currency": "RUB",

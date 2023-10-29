@@ -15,6 +15,7 @@ interface CommentListProps {
 export const CommentList = memo(function CommentList(props: CommentListProps) {
   const { className, comments, isLoading } = props;
   const { t } = useTranslation();
+
   return (
     <div className={classNames(cls.CommentList, {}, [className])}>
       {comments.length > 0 ? (
@@ -23,6 +24,7 @@ export const CommentList = memo(function CommentList(props: CommentListProps) {
             className={cls.comment}
             key={comment.id}
             comment={comment}
+            isLoading={isLoading}
           />
         ))
       ) : (

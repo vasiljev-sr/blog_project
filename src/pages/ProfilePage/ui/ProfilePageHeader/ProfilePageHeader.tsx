@@ -5,6 +5,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { Button } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import {
+  getCanEditProfileData,
   getProfileReadonly,
   profileActions,
   updateProfileData,
@@ -23,6 +24,8 @@ export const ProfilePageHeader = memo(function ProfilePageHeader(
   const readonly = useSelector(getProfileReadonly);
   const dispatch = useAppDispatch();
 
+  const canEdit = useSelector(getCanEditProfileData);
+
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false));
   }, [dispatch]);
@@ -38,19 +41,23 @@ export const ProfilePageHeader = memo(function ProfilePageHeader(
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <Text title={t('Профиль')} />
-      {readonly ? (
-        <Button theme="outlined" onClick={onEdit}>
-          {t('Редактировать')}
-        </Button>
-      ) : (
-        <div className={cls.buttons}>
-          <Button theme="outlined" onClick={onSave} color="success">
-            {t('Сохранить')}
-          </Button>
-          <Button theme="outlined" onClick={onCancelEdit} color="error">
-            {t('Отмена')}
-          </Button>
-        </div>
+      {canEdit && (
+        <>
+          {readonly ? (
+            <Button theme="outlined" onClick={onEdit}>
+              {t('Редактировать')}
+            </Button>
+          ) : (
+            <div className={cls.buttons}>
+              <Button theme="outlined" onClick={onSave} color="success">
+                {t('Сохранить')}
+              </Button>
+              <Button theme="outlined" onClick={onCancelEdit} color="error">
+                {t('Отмена')}
+              </Button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

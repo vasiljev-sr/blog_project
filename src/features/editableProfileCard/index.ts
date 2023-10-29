@@ -7,3 +7,4 @@ export { getProfileData } from './model/selectors/getProfileData/getProfileData'
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
 export { getProfileError } from './model/selectors/getProfileError/getProfileError';
 export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+export { getCanEditProfileData } from './model/selectors/getCanEditProfileData/getCanEditProfileData';

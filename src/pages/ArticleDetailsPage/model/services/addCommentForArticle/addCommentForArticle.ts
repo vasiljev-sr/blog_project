@@ -3,9 +3,9 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { getUserAuthData } from 'entities/User';
 import { getArticleDetails } from 'entities/Article';
-import { commentFormActions } from '../../slice/addCommentFormSlice';
+import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const sendComment = createAsyncThunk<
+export const addCommentForArticle = createAsyncThunk<
   Comment,
   string,
   ThunkConfig<string>
@@ -29,7 +29,8 @@ export const sendComment = createAsyncThunk<
     if (!response.data) {
       throw new Error();
     }
-    dispatch(commentFormActions.setText(''));
+    dispatch(fetchCommentsByArticleId(article?.id));
+
     return response.data;
   } catch (e) {
     console.log(e);

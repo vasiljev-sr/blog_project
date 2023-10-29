@@ -11,14 +11,14 @@ import {
   commentFormActions,
   commentFormReducer,
 } from '../../model/slice/addCommentFormSlice';
-import { sendComment } from 'features/addCommentForm/model/services/sendComment/sendComment';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 
-interface AddCommentFormProps {
+export interface AddCommentFormProps {
   className?: string;
+  onSendComment: (text: string) => void;
 }
 
 const reducers: ReducersList = {
@@ -28,7 +28,7 @@ const reducers: ReducersList = {
 const AddCommentForm = memo(function AddCommentForm(
   props: AddCommentFormProps
 ) {
-  const { className } = props;
+  const { className, onSendComment } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const commentText = useSelector(getCommentFormText);
@@ -40,9 +40,11 @@ const AddCommentForm = memo(function AddCommentForm(
     [dispatch]
   );
 
-  const onSendComment = useCallback(() => {
-    dispatch(sendComment());
-  }, [dispatch]);
+  const onSendHandler = useCallback(() => {
+    onSendComment(commentText || '');
+    onCommentTextChange('');
+  }, [commentText, onCommentTextChange, onSendComment]);
+
   return (
     <DynamicModuleLoader reducers={reducers}>
       <div className={classNames(cls.AddCommentForm, {}, [className])}>
@@ -56,7 +58,7 @@ const AddCommentForm = memo(function AddCommentForm(
           type="submit"
           theme="outlined"
           className={cls.submitBtn}
-          onClick={onSendComment}
+          onClick={onSendHandler}
         >
           {t('Отправить')}
         </Button>

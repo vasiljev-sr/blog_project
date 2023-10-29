@@ -6,6 +6,7 @@ import { ProfileData } from 'features/editableProfileCard';
 import { ValidateProfileError } from 'features/editableProfileCard/model/types/profileData';
 
 const profileData: ProfileData = {
+  id: '1',
   first_name: 'Ravil',
   last_name: 'Vasilev',
   avatar: 'https://loremflickr.com/480/320',
