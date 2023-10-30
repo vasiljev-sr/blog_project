@@ -1,24 +1,22 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './CommentCard.module.scss';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Comment } from '../../model/types/comment';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import appRouter from 'app/providers/Router/ui/AppRouter';
 import { routePaths } from 'shared/config/routeConfig/routeConfig';
 
 interface CommentCardProps {
   className?: string;
-  comment: Comment;
+  comment?: Comment;
   isLoading?: boolean;
 }
 
 export const CommentCard = memo(function CommentCard(props: CommentCardProps) {
   const { className, comment, isLoading } = props;
-  const { t } = useTranslation();
+
   if (isLoading) {
     return (
       <div className={classNames(cls.CommentCard, {}, [className])}>
@@ -29,6 +27,10 @@ export const CommentCard = memo(function CommentCard(props: CommentCardProps) {
         <Skeleton className={cls.commentText} height="1rem" />
       </div>
     );
+  }
+
+  if (!comment) {
+    return null;
   }
   return (
     <div className={classNames(cls.CommentCard, {}, [className])}>

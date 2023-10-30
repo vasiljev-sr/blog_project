@@ -1,13 +1,11 @@
 import {
   createEntityAdapter,
   createSlice,
-  configureStore,
   PayloadAction,
 } from '@reduxjs/toolkit';
 import { ArticleDetailsCommentsSchema } from '../../types/ArticleDetailsCommentsSchema';
 import { Comment } from 'entities/Comment';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { loginByUsername } from 'features/authByUserName/model/services/loginByUsername/loginByUsername';
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 

@@ -16,6 +16,16 @@ export const CommentList = memo(function CommentList(props: CommentListProps) {
   const { className, comments, isLoading } = props;
   const { t } = useTranslation();
 
+  if (isLoading) {
+    return (
+      <div className={classNames(cls.CommentList, {}, [className])}>
+        <CommentCard className={cls.comment} isLoading={isLoading} />
+        <CommentCard className={cls.comment} isLoading={isLoading} />
+        <CommentCard className={cls.comment} isLoading={isLoading} />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames(cls.CommentList, {}, [className])}>
       {comments.length > 0 ? (
