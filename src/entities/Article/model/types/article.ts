@@ -32,3 +32,5 @@ export interface Article {
   type: string[];
   blocks: ArticleBlock[];
 }
+
+export type ArticleView = 'gallery' | 'list';

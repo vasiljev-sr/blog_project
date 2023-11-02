@@ -25,7 +25,8 @@
       "id": "3Zyb3it"
     }
   ],
-  "profile": {
+  "profile": [{
+    "id": "1",
     "first_name": "Ravil555",
     "last_name": "Vasilev",
     "age": 26,
@@ -35,6 +36,18 @@
     "username": "admin",
     "avatar": "https://loremflickr.com/480/320"
   },
+    {
+      "id": "2",
+      "first_name": "Danil",
+      "last_name": "Vasilev",
+      "age": 26,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Kazan",
+      "username": "admin",
+      "avatar": "https://loremflickr.com/480/320"
+    }],
+
   "articles": [
     {
       "id": "1",
@@ -112,6 +125,11 @@
     {
       "id": "1",
       "username": "admin",
+      "password": "123"
+    },
+    {
+      "id": "1",
+      "username": "user",
       "password": "123"
     }
   ]
