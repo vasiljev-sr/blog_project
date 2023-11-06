@@ -18,6 +18,7 @@
   --navbar-height: 50px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
+  --card-border-radius: 8px;
 
   // ЦВЕТА
 
@@ -27,4 +28,8 @@
 
   --modal-zindex: 10;
   --select-label-zindex: 9;
+
+  //АНИМАЦИИ
+
+  --transition-duration: 0.2s;
 }

@@ -9,7 +9,7 @@ interface ArticleListProps {
   className?: string;
   articles: Article[];
   isLoading?: boolean;
-  view: ArticleView;
+  view?: ArticleView;
 }
 
 export const ArticleList = memo(function ArticleList(props: ArticleListProps) {
@@ -19,7 +19,12 @@ export const ArticleList = memo(function ArticleList(props: ArticleListProps) {
   const renderArticle = useCallback(
     (item: Article) => {
       return (
-        <ArticleListItem article={item} view={view} isLoading={isLoading} />
+        <ArticleListItem
+          article={item}
+          view={view}
+          isLoading={isLoading}
+          key={item.id}
+        />
       );
     },
     [isLoading, view]
