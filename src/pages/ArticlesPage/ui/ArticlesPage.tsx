@@ -15,6 +15,11 @@ const articles = {
   views: 1022,
   createdAt: '26.02.2022',
   type: ['IT', 'Science', 'Economy'],
+  user: {
+    id: '1',
+    avatar: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+    username: 'admin',
+  },
   blocks: [
     {
       id: '1',
@@ -83,6 +88,8 @@ const ArticlesPage = memo(function ArticlesPage(props: ArticlesPageProps) {
   return (
     <div className={classNames('', {}, [className])}>
       <ArticleList
+        view="gallery"
+        isLoading
         articles={Array.from(Array(16).keys()).map((item) => ({
           ...articles,
           id: String(item),

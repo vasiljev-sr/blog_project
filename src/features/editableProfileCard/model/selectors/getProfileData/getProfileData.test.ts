@@ -8,7 +8,8 @@ describe('getProfileData.test', () => {
     const data = {
       first_name: 'Ravil',
       last_name: 'Vasilev',
-      avatar: 'https://loremflickr.com/480/320',
+      avatar:
+        'https://koshka.top/uploads/posts/2021-11/1638019767_2-koshka-top-p-rizhe-belii-kot-poroda-2.jpg',
       age: 26,
       username: 'admin',
       country: Country.Russia,

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 
 interface ArticleListProps {
   className?: string;
@@ -24,14 +25,24 @@ export const ArticleList = memo(function ArticleList(props: ArticleListProps) {
           view={view}
           isLoading={isLoading}
           key={item.id}
+          className={cls.card}
         />
       );
     },
     [isLoading, view]
   );
 
+  if (isLoading) {
+    return (
+      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        {new Array(view === 'gallery' ? 9 : 3).fill(0).map((item, index) => (
+          <ArticleListItemSkeleton view={view} key={index} />
+        ))}
+      </div>
+    );
+  }
   return (
-    <div className={classNames(cls.ArticleList, {}, [className])}>
+    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
     </div>
   );

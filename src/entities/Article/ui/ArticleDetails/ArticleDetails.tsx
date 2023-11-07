@@ -102,7 +102,12 @@ export const ArticleDetails = memo(function ArticleDetails(
             <Avatar size={200} src={article?.img} className={cls.avatar} />
           )}
         </div>
-        <Text title={article?.title} text={article?.subtitle} size="size_l" />
+        <Text
+          title={article?.title}
+          text={article?.subtitle}
+          size="size_l"
+          className={cls.title}
+        />
         <div className={cls.articleInfo}>
           <Icon Svg={EyeIcon} />
           <Text text={String(article?.views)} />

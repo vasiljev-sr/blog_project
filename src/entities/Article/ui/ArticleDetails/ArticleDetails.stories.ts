@@ -22,6 +22,10 @@ const state: ArticlesSchema = {
     views: 1022,
     createdAt: '26.02.2022',
     type: ['IT'],
+    user: {
+      id: '1',
+      username: 'admin',
+    },
     blocks: [
       {
         id: '1',
