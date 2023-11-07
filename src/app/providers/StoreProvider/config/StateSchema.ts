@@ -13,6 +13,7 @@ import { ProfileSchema } from 'features/editableProfileCard';
 import { ArticlesSchema } from 'entities/Article/';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { CommentFormSchema } from 'features/addCommentForm';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 export interface StateSchema {
   user: UserSchema;
   authForm?: LoginSchema;
@@ -20,6 +21,7 @@ export interface StateSchema {
   articleDetails?: ArticlesSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
   addCommentForm?: CommentFormSchema;
+  articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

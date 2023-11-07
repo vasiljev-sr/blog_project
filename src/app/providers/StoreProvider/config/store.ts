@@ -1,4 +1,3 @@
-import { NavigateFunction } from 'react-router-dom';
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { userReducer } from 'entities/User';
