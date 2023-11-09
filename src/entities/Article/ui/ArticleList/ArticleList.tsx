@@ -17,6 +17,14 @@ export const ArticleList = memo(function ArticleList(props: ArticleListProps) {
   const { className, articles, view = 'gallery', isLoading } = props;
   const { t } = useTranslation();
 
+  const getSkeletons = (view: ArticleView) => {
+    return new Array(view === 'gallery' ? 9 : 3)
+      .fill(0)
+      .map((item, index) => (
+        <ArticleListItemSkeleton view={view} key={index} className={cls.card} />
+      ));
+  };
+
   const renderArticle = useCallback(
     (item: Article) => {
       return (
@@ -32,18 +40,10 @@ export const ArticleList = memo(function ArticleList(props: ArticleListProps) {
     [isLoading, view]
   );
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-        {new Array(view === 'gallery' ? 9 : 3).fill(0).map((item, index) => (
-          <ArticleListItemSkeleton view={view} key={index} />
-        ))}
-      </div>
-    );
-  }
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });

@@ -49,15 +49,15 @@ export const ArticleListItem = memo(function ArticleListItem(
     navigate(routePaths.articleDetails + id);
   }, [id, navigate]);
 
-  if (isLoading) {
-    return (
-      <div
-        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-      >
-        <ArticleListItemSkeleton view={view} />
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div
+  //       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+  //     >
+  //       <ArticleListItemSkeleton view={view} />
+  //     </div>
+  //   );
+  // }
 
   if (view === 'list') {
     const textBlock = blocks.find(

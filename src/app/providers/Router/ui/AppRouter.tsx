@@ -14,13 +14,7 @@ const AppRouter = () => {
       element
     );
 
-    return (
-      <Route
-        key={path}
-        path={path}
-        element={<div className="page-wrapper">{routeElement}</div>}
-      />
-    );
+    return <Route key={path} path={path} element={routeElement} />;
   }, []);
 
   return (

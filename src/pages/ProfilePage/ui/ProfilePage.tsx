@@ -11,6 +11,7 @@ import {
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -27,8 +28,10 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <ProfilePageHeader />
-      <EditableProfileCard />
+      <Page>
+        <ProfilePageHeader />
+        <EditableProfileCard />
+      </Page>
     </DynamicModuleLoader>
   );
 };

@@ -11,8 +11,8 @@ export const Card: FC<CardProps> = memo(function Card(props: CardProps) {
   const { className, children, ...restProps } = props;
 
   return (
-    <div className={classNames(cls.Card, {}, [className])} {...restProps}>
+    <article className={classNames(cls.Card, {}, [className])} {...restProps}>
       {children}
-    </div>
+    </article>
   );
 });

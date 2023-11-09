@@ -30,7 +30,7 @@ export const Navbar = memo(function Navbar(props: NavbarProps) {
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
+    <header className={classNames(cls.Navbar, {}, [className])}>
       {authData ? (
         <>
           <Button theme="clear" className={cls.links} onClick={onLogout}>
@@ -45,6 +45,6 @@ export const Navbar = memo(function Navbar(props: NavbarProps) {
           <LoginModal isOpen={open} onClose={onCloseModal} />
         </>
       )}
-    </div>
+    </header>
   );
 });
