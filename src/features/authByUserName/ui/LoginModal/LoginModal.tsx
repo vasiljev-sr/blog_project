@@ -1,5 +1,5 @@
 import { LoginFormLazy } from '../LoginForm/LoginFormLazy';
-import { Modal } from 'shared/ui/Modal/Modal';
+import { Modal } from 'widgets/Modal/Modal';
 import { Suspense } from 'react';
 import { Loader } from 'shared/ui/Loader/Loader';
 

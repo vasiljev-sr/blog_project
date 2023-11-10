@@ -14,8 +14,10 @@ import { ArticlesSchema } from 'entities/Article/';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { CommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollSavingSchema } from 'features/scrollPositionSaving';
 export interface StateSchema {
   user: UserSchema;
+  scroll: ScrollSavingSchema;
   authForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticlesSchema;

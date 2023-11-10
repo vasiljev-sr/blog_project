@@ -20,7 +20,7 @@ import {
   getArticlesPageView,
 } from '../model/selectors/getArticlesPageData';
 import { ArticleViewSwitcher } from 'features/changeArticleView';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { fetchNextArticlesPart } from '../model/services/fetchNextArticlesPart/fetchNextArticlesPart';
 import { fetchInitialArticlesPart } from '../model/services/fetchInitialArticlesPart/fetchInitialArticlesPart';
 
@@ -60,6 +60,7 @@ const ArticlesPage = memo(function ArticlesPage(props: ArticlesPageProps) {
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames('', {}, [className])}
+        watchScroll={false}
       >
         <ArticleViewSwitcher view={view} onViewChange={onViewChange} />
         <ArticleList view={view} isLoading={isLoading} articles={articles} />
