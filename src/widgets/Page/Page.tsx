@@ -61,7 +61,7 @@ export const Page = memo(function Page(props: PageProps) {
       {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        onScrollEnd && <div ref={targetRef} />
+        onScrollEnd && <div ref={targetRef} className={cls.trigger} />
       }
     </section>
   );

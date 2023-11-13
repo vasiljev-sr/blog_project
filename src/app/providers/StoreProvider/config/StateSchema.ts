@@ -15,6 +15,7 @@ import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { CommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSavingSchema } from 'features/scrollPositionSaving';
+import { ArticlesFilterSchema } from 'features/articlesFilter';
 export interface StateSchema {
   user: UserSchema;
   scroll: ScrollSavingSchema;
@@ -24,6 +25,7 @@ export interface StateSchema {
   articleDetailsComments?: ArticleDetailsCommentsSchema;
   addCommentForm?: CommentFormSchema;
   articlesPage?: ArticlesPageSchema;
+  articlesFilter?: ArticlesFilterSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

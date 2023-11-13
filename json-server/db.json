@@ -53,7 +53,8 @@
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -84,11 +85,12 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/2048px-Python.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 999,
+      "createdAt": "26.01.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -119,11 +121,12 @@
       "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.swenggcosoftware.com/wp-content/uploads/2016/08/Java-logo.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1254,
+      "createdAt": "25.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "ECONOMY"
       ],
       "blocks": [
         {
@@ -154,8 +157,8 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 450,
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -189,11 +192,12 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/2048px-Python.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 258,
+      "createdAt": "11.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -224,8 +228,8 @@
       "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.swenggcosoftware.com/wp-content/uploads/2016/08/Java-logo.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 647,
+      "createdAt": "26.06.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -259,11 +263,12 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1111,
+      "createdAt": "26.07.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "ECONOMY"
       ],
       "blocks": [
         {
@@ -294,8 +299,8 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/2048px-Python.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 5879,
+      "createdAt": "01.02.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -329,11 +334,12 @@
       "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.swenggcosoftware.com/wp-content/uploads/2016/08/Java-logo.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 154,
+      "createdAt": "26.12.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -364,8 +370,8 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 666,
+      "createdAt": "24.02.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -399,11 +405,12 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/2048px-Python.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 789,
+      "createdAt": "11.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "ECONOMY"
       ],
       "blocks": [
         {
@@ -434,11 +441,11 @@
       "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.swenggcosoftware.com/wp-content/uploads/2016/08/Java-logo.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 5444,
+      "createdAt": "26.01.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -469,11 +476,11 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 23,
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMY"
       ],
       "blocks": [
         {
@@ -504,8 +511,8 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/2048px-Python.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 450,
+      "createdAt": "24.02.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -539,11 +546,12 @@
       "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.swenggcosoftware.com/wp-content/uploads/2016/08/Java-logo.jpg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 666,
+      "createdAt": "13.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
